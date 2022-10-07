@@ -16,8 +16,14 @@
   "dependencies": {},
   "devDependencies": {
     "@metamask/detect-provider": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "@walletconnect/web3-provider": "^1.8.0",
     "concurrently": "^7.4.0",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "tsc-alias": "^1.7.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
