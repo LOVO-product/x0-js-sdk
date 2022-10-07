@@ -1,11 +1,17 @@
 {
-  "name": "x0-js-sdk",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@Lovo-product/x0-js-sdk",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "@LOVO-product:registry":"https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LOVO-product/x0-js-sdk.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "concurrently \"yarn build:types\" \"yarn build:vite\"",
