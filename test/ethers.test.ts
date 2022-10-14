@@ -1,0 +1,3 @@
+describe(`NFT Query`, () => {
+  it(``)
+});
