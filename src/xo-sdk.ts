@@ -1,5 +1,6 @@
 import { ethers, providers } from 'ethers';
 import { BlueChipContract, contractAddresses } from './contracts';
+import { NftManager } from './nft-manager/interface';
 
 export interface XoSdkConfig {
   apiKey: string;
@@ -10,6 +11,7 @@ export class XoSdk {
   readonly apiKey: string;
   readonly provider: providers.Provider;
 
+  private readonly nftManagers: { [key: string]: NftManager } = {};
   static abi = [
     'function balanceOf(address owner) view returns (uint256)',
     'function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)',
