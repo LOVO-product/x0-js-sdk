@@ -1,12 +1,17 @@
+import * as dotenv from 'dotenv';
 import { ethers } from 'ethers';
 import { BlueChipContract, X0Sdk } from '../src';
+dotenv.config();
 
 describe(`X0Sdk`, () => {
   let sdkInstance: X0Sdk;
   const harasAddress = '0x3955625c3804607033D43b83982872c982f7308e';
-  const alchemyApiKey = '0RFvC1kJM_33G5GAnthpilrsLM_2Kk2m';
+  const alchemyApiKey = process.env.ALCHEMY_API_KEY;
 
   beforeEach(() => {
+    if (!alchemyApiKey) {
+      throw new Error(`ALCHEMY_API_KEY is not defined`);
+    }
     sdkInstance = X0Sdk.initialize({
       apiKey: alchemyApiKey,
       provider: new ethers.providers.AlchemyProvider('mainnet', '0RFvC1kJM_33G5GAnthpilrsLM_2Kk2m'),
