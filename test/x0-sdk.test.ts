@@ -14,7 +14,7 @@ describe(`X0Sdk`, () => {
     }
     sdkInstance = X0Sdk.initialize({
       apiKey: alchemyApiKey,
-      provider: new ethers.providers.AlchemyProvider('mainnet', '0RFvC1kJM_33G5GAnthpilrsLM_2Kk2m'),
+      provider: new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey),
     });
   });
 
