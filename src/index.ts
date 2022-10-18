@@ -1,2 +1,2 @@
 export { BlueChipContract, contractAddresses } from './contracts';
-export { XoSdk } from './xo-sdk';
+export { X0Sdk } from './x0-sdk';
