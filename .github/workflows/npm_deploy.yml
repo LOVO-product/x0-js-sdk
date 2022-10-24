@@ -4,6 +4,7 @@
 name: Node.js Package
 
 on:
+  branch: [test]
   release:
     types: [created]
 
