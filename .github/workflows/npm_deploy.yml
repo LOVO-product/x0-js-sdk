@@ -5,8 +5,11 @@ name: Node.js Package
 
 on:
   branch: [test]
-  release:
-    types: [created]
+  # release:
+  #   types: [created]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build:
