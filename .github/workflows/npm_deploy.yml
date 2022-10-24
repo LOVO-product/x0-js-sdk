@@ -21,7 +21,11 @@ jobs:
         with:
           node-version: 16
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn test
+      - name: Test
+        run: yarn test
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          X0_API_KEY: ${{ secrets.X0_API_KEY }}
 
   publish-npm:
     needs: build
