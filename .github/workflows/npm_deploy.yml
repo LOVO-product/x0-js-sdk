@@ -5,8 +5,6 @@ name: Publish
 
 on:
   push:
-    branches:
-      - test
     tags:
       - 'v*'
   # release:
