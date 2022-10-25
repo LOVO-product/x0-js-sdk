@@ -64,9 +64,6 @@ export class X0Api {
   async getPairedColdAddressesFrom(x0Address: string): Promise<string[]> {
     this._validateAddress(x0Address);
     const connections = await this.getX0ConnectionsBy(x0Address);
-    if (!connections) {
-      return [];
-    }
     return connections.map((connection: Connection) => connection.walletAddressCold);
   }
 
