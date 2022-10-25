@@ -7,12 +7,10 @@ module.exports = {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
   moduleNameMapper: {
-    // './src/(.*)': './src/$1', // for sendgrid
-    'src/(.*)': '<rootDir>/src/$1',
     'test/(.*)': '<rootDir>/test/$1',
   },
   modulePaths: ['<rootDir>/src'],
-  collectCoverageFrom: ['**/*.(t|j)s'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
   coverageDirectory: './coverage',
   testEnvironment: 'node',
   modulePathIgnorePatterns: ['<rootDir>/dist', 'node_modules'],
