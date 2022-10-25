@@ -56,6 +56,20 @@ export class X0Api {
     return response.data;
   }
 
+  /**
+   *
+   * @param x0Address - The address of the X0 wallet
+   * @returns Cold addresses connected to the X0 wallet
+   */
+  async getPairedColdAddressesFrom(x0Address: string): Promise<string[]> {
+    this._validateAddress(x0Address);
+    const connections = await this.getX0ConnectionsBy(x0Address);
+    if (!connections) {
+      return [];
+    }
+    return connections.map((connection: Connection) => connection.walletAddressCold);
+  }
+
   private _validateAddress(address: string): void {
     if (!ethers.utils.isAddress(address)) {
       throw new Error(`Invalid Block Chain Address: ${address}`);

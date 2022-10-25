@@ -21,4 +21,9 @@ export class Erc721Alternative implements NftManager {
     });
     return tokens.ownedNfts.map((token) => token.tokenId);
   }
+
+  async tokenURI(tokenId: string): Promise<Record<string, any> | null> {
+    const res = await this.alchemy.nft.getNftMetadata(this.contractAddress, tokenId);
+    return res;
+  }
 }
