@@ -1,6 +1,11 @@
 import { ethers, providers } from 'ethers';
-import { BlueChipContract, contractAddresses } from './contracts';
-import { Erc721, Erc721Alternative, NftManager } from './nft-manager';
+import {
+  Erc721,
+  Erc721Alternative,
+  NftManager,
+  BlueChipContract,
+  contractAddresses,
+} from '../index';
 
 export interface X0SdkConfig {
   /**
@@ -16,16 +21,13 @@ export interface X0SdkConfig {
 }
 
 /**
- * . . .
- * example
+ * @example
  * ```typescript
- *
  * const x0Sdk = new X0Sdk({ provider: new ethers.providers.AlchemyProvider('mainnet', 'YOUR_PROVIDER_API_KEY') });
  * const x0Api = new X0Api('YOUR_X0_API_KEY');
  * const pairedWalletAddresses = await x0Api.getPairedColdAddressesFrom('0x...');
  * const tokens = await x0Sdk.fetchTokensWithContractAddress('0x...', pairedWalletAddresses[0]);
  * const metaData = await x0Sdk.getNftMetadata('0x...', tokens[0]);
- *
  * ```
  */
 export class X0Sdk {
