@@ -1,5 +1,6 @@
 import { NftManager } from './interface';
 import { Contract, ethers, providers } from 'ethers';
+import axios from 'axios';
 
 export interface X0Erc721Config {
   contractAddress: string;
@@ -19,6 +20,7 @@ export class Erc721 implements NftManager {
   static abi = [
     'function balanceOf(address owner) view returns (uint256)',
     'function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)',
+    'function tokenURI(uint256 tokenId) view returns (string)',
   ];
 
   private async fetchBalance(address: string): Promise<number> {
@@ -42,5 +44,11 @@ export class Erc721 implements NftManager {
     );
 
     return tokens;
+  }
+
+  async tokenURI(tokenId: string): Promise<Record<string, any> | null> {
+    const metaData = await this.contract.tokenURI(tokenId);
+    const res = await axios.get(metaData);
+    return res.data ?? null;
   }
 }
