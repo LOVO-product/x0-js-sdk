@@ -1,6 +1,11 @@
 import { ethers, providers } from 'ethers';
-import { BlueChipContract, contractAddresses } from './contracts';
-import { Erc721, Erc721Alternative, NftManager } from './nft-manager';
+import {
+  Erc721,
+  Erc721Alternative,
+  NftManager,
+  BlueChipContract,
+  contractAddresses,
+} from '../index';
 
 export interface X0SdkConfig {
   /**

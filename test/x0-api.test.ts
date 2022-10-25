@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import { X0Api } from '../src/x0-api';
+import { X0Api } from '../src/index';
 dotenv.config();
 
 describe(`X0Api`, () => {
