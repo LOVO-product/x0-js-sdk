@@ -17,8 +17,9 @@ interface Connection {
 }
 
 /**
- * ```ts
- * import { X0Api } from '@x0/x0-api-sdk';
+ * @example
+ * ```typescript
+ * import { X0Api } from '@x0/x0-api';
  * const x0Api = new X0Api('YOUR_API_KEY');
  * ```
  */
