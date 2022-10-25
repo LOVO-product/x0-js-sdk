@@ -23,12 +23,16 @@ Install the package with:
 
 X0 maintains types for the latest [API version][api-versions].
 
-Instantiate it as `new X0Api()` with the latest API version.
+Instantiate it as `new X0Api()` and `new X0Sdk()` with the latest API version.
+
+**`X0Api Example`**
 
 ```typescript
 import { X0Api } from '@x0/x0-api';
 const x0Api = new X0Api('YOUR_API_KEY');
 ```
+
+**`X0Sdk Example`**
 
 ```typescript
 const x0Sdk = new X0Sdk({
