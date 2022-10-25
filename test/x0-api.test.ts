@@ -21,7 +21,7 @@ describe(`X0Api`, () => {
 
   describe('getX0ConnectionsBy', () => {
     it('should return invalid address error', async () => {
-      await x0Api.getX0ConnectionsBy('0x123').catch((error) => {
+      await x0Api.getX0ConnectionsBy('0x123').catch((error: any) => {
         expect(error.message).toEqual('Invalid Block Chain Address: 0x123');
       });
     });

@@ -1,8 +1,6 @@
 import * as dotenv from 'dotenv';
 import { ethers } from 'ethers';
-import { BlueChipContract, contractAddresses } from '../src';
-import { Erc721 } from '../src/nft-manager/erc721';
-import { Erc721Alternative } from '../src/nft-manager/erc721-alternative';
+import { BlueChipContract, contractAddresses, Erc721, Erc721Alternative } from '../src';
 dotenv.config();
 
 describe(`ERC721 & Alternative`, () => {
@@ -45,7 +43,7 @@ describe(`ERC721 & Alternative`, () => {
 
       const VVO = new Erc721Alternative(contractAddresses[BlueChipContract.VVO], alchemyApiKey);
       const metadata = await VVO.tokenURI('0');
-      expect(metadata?.tokenId).toBe('0');
+      expect(metadata?.TokenID).toBe('0');
     });
   });
 });
