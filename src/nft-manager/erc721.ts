@@ -47,8 +47,8 @@ export class Erc721 implements NftManager {
   }
 
   async tokenURI(tokenId: string): Promise<Record<string, any> | null> {
-    const metaData = await this.contract.tokenURI(tokenId);
-    const res = await axios.get(metaData);
+    const url = await this.contract.tokenURI(tokenId);
+    const res = await axios.get(url);
     return res.data ?? null;
   }
 }

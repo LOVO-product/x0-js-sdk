@@ -1,8 +1,6 @@
 import { ethers, providers } from 'ethers';
 import { BlueChipContract, contractAddresses } from './contracts';
-import { Erc721 } from './nft-manager/erc721';
-import { Erc721Alternative } from './nft-manager/erc721-alternative';
-import { NftManager } from './nft-manager/interface';
+import { Erc721, Erc721Alternative, NftManager } from './nft-manager';
 
 export interface X0SdkConfig {
   /**
@@ -127,6 +125,7 @@ export class X0Sdk {
 
   /**
    *
+   * @description check if the wallet address has a token of the contract
    * @param contract contract name of BlueChipContract
    * @param address  wallet address
    * @return true if the wallet address has NFTs
