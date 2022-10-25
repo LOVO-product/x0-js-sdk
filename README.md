@@ -10,51 +10,32 @@
 
 ### Classes
 
-- [Erc721](classes/Erc721.md)
-- [Erc721Alternative](classes/Erc721Alternative.md)
-- [X0Api](classes/X0Api.md)
-- [X0Sdk](classes/X0Sdk.md)
+- [Erc721](docs/classes/Erc721.md)
+- [Erc721Alternative](docs/classes/Erc721Alternative.md)
+- [X0Api](docs/classes/X0Api.md)
+- [X0Sdk](docs/classes/X0Sdk.md)
 
-### Interfaces
+## Installation
 
-- [NftManager](interfaces/NftManager.md)
+Install the package with:
 
-### Variables
+### Usage with TypeScript
 
-- [contractAddresses](modules.md#contractaddresses)
+X0 maintains types for the latest [API version][api-versions].
 
-## Variables
+Instantiate it as `new X0Api()` with the latest API version.
 
-### contractAddresses
+```typescript
+import { X0Api } from '@x0/x0-api';
+const x0Api = new X0Api('YOUR_API_KEY');
+```
 
-• `Const` **contractAddresses**: `Object`
-
-contract addresses for supported blue chip NFTs
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `Azuki` | `string` |
-| `BAKC` | `string` |
-| `BAYC` | `string` |
-| `Beanz` | `string` |
-| `CloneX` | `string` |
-| `CoolCats` | `string` |
-| `CreatureWorld` | `string` |
-| `Cryptoadz` | `string` |
-| `Doodles` | `string` |
-| `InvisibleFriends` | `string` |
-| `Karafuru` | `string` |
-| `MAYC` | `string` |
-| `MFERS` | `string` |
-| `Mekaverse` | `string` |
-| `MoonBirds` | `string` |
-| `PudgyPenguins` | `string` |
-| `VVO` | `string` |
-| `WOW` | `string` |
-| `goblintown` | `string` |
-
-#### Defined in
-
-[contracts.ts:29](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L29)
+```typescript
+const x0Sdk = new X0Sdk({
+  provider: new ethers.providers.AlchemyProvider('mainnet', 'YOUR_PROVIDER_API_KEY'),
+});
+const x0Api = new X0Api('YOUR_X0_API_KEY');
+const pairedWalletAddresses = await x0Api.getPairedColdAddressesFrom('0x...');
+const tokens = await x0Sdk.fetchTokensWithContractAddress('0x...', pairedWalletAddresses[0]);
+const metaData = await x0Sdk.getNftMetadata('0x...', tokens[0]);
+```
