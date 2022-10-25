@@ -1,3 +1,5 @@
+@lovo-product/x0-js-sdk / [Exports](modules.md)
+
 # x0-js-sdk
 
 Typescript SDK for X0
