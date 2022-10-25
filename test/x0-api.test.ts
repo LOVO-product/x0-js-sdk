@@ -21,9 +21,12 @@ describe(`X0Api`, () => {
 
   describe('getX0ConnectionsBy', () => {
     it('should return invalid address error', async () => {
-      await x0Api.getX0ConnectionsBy('0x123').catch((error: any) => {
-        expect(error.message).toEqual('Invalid Block Chain Address: 0x123');
-      });
+      try {
+        await x0Api.getX0ConnectionsBy('0x123');
+        expect(true).toBeFalsy();
+      } catch (e: any) {
+        expect(e.message).toEqual('Invalid Block Chain Address: 0x123');
+      }
     });
     it('should return connections', async () => {
       const res = await x0Api.getX0ConnectionsBy(x0Address);
