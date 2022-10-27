@@ -3,13 +3,13 @@ import { X0Api } from '../src/index';
 dotenv.config();
 
 describe(`X0Api`, () => {
-  const x0ApiKey = process.env.ALCHEMY_API_KEY;
+  const x0ApiKey = process.env.X0_API_KEY;
   let x0Api: X0Api;
   const x0Address = '0x268Fc17e40123701B9A5a71dB9e77bF5Ae07D5d6';
   const coldAddress = '0x571aab2bec12edC2cfA02C989b2DA47912B7a0c6';
   beforeAll(() => {
     if (!x0ApiKey) {
-      throw new Error('Missing X0_API_KEY in .env');
+      throw new Error('Missing X0_API_KEY');
     }
     x0Api = new X0Api(x0ApiKey, { url: 'https://api-dev.x0.xyz/v1' });
   });
