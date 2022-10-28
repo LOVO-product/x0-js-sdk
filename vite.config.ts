@@ -1,13 +1,13 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import { peerDependencies, dependencies } from './package.json'
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+import { peerDependencies, dependencies } from './package.json';
 
 export default defineConfig({
   plugins: [],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
-    }
+      '@': resolve(__dirname, 'src'),
+    },
   },
   build: {
     lib: {
@@ -17,9 +17,9 @@ export default defineConfig({
       // for UMD name: 'GlobalName'
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)]
+      external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
     },
     target: 'esnext',
-    sourcemap: true
-  }
-})
+    sourcemap: true,
+  },
+});
