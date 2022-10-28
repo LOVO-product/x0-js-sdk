@@ -1,6 +1,6 @@
 {
   "name": "@lovo-product/x0-js-sdk",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "provide a sdk for x0",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -15,11 +15,7 @@
     "url": "https://github.com/LOVO-product/x0-js-sdk.git"
   },
   "files": [
-    "dist/src",
-    "dist/index.cjs.js",
-    "dist/index.es.js",
-    "dist/index.cjs.js.map",
-    "dist/index.es.js.map"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
