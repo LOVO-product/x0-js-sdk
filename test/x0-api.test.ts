@@ -3,6 +3,7 @@ import { X0Api } from '../src/index';
 dotenv.config();
 
 describe(`X0Api`, () => {
+  jest.setTimeout(60000);
   const x0ApiKey = process.env.X0_API_KEY;
   let x0Api: X0Api;
   const x0Address = '0x268Fc17e40123701B9A5a71dB9e77bF5Ae07D5d6';
