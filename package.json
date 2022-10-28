@@ -14,6 +14,13 @@
     "type": "git",
     "url": "https://github.com/LOVO-product/x0-js-sdk.git"
   },
+  "files": [
+    "dist/src",
+    "dist/index.cjs.js",
+    "dist/index.es.js",
+    "dist/index.cjs.js.map",
+    "dist/index.es.js.map"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "concurrently \"yarn build:types\" \"yarn build:vite\"",
