@@ -18,5 +18,5 @@
     "declaration": true,
     "declarationMap": true
   },
-  "include": ["src", "test"]
+  "include": ["src"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "@lovo-product/x0-js-sdk",
-  "version": "0.0.7",
+  "version": "0.0.13",
   "description": "provide a sdk for x0",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/LOVO-product/x0-js-sdk.git"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "concurrently \"yarn build:types\" \"yarn build:vite\"",
