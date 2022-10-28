@@ -9,12 +9,25 @@ lerna-debug.log*
 
 node_modules
 
-.env
-.env.test
+# Readme tool
+docs
 
+# Tests
+test
 coverage
 *.lcov
 
-src
-docs
-test
+# Editor directories and files
+.github
+.vscode
+source
+spec
+typings
+**/*.map
+tsconfig.json
+tsconfig.build.json
+gulpfile.js
+example
+example.js
+*.cjs
+.prettierrc
