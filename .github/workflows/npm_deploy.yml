@@ -24,6 +24,8 @@ jobs:
         env:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           X0_API_KEY: ${{ secrets.X0_API_KEY }}
+      - name: build
+        run: yarn build
 
   publish-npm:
     needs: build
