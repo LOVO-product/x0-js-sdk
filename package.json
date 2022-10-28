@@ -1,6 +1,6 @@
 {
   "name": "@lovo-product/x0-js-sdk",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "provide a sdk for x0",
   "type": "module",
   "main": "dist/index.cjs.js",
