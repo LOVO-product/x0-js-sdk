@@ -35,7 +35,7 @@ tokens
 
 #### Defined in
 
-[nft-manager/interface.ts:14](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/nft-manager/interface.ts#L14)
+[nft-manager/interface.ts:14](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/interface.ts#L14)
 
 ___
 
@@ -57,7 +57,7 @@ true if the address owns at least one token
 
 #### Defined in
 
-[nft-manager/interface.ts:7](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/nft-manager/interface.ts#L7)
+[nft-manager/interface.ts:7](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/interface.ts#L7)
 
 ___
 
@@ -79,4 +79,4 @@ metadata
 
 #### Defined in
 
-[nft-manager/interface.ts:21](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/nft-manager/interface.ts#L21)
+[nft-manager/interface.ts:21](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/interface.ts#L21)

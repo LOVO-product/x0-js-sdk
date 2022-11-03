@@ -36,7 +36,7 @@ enum for blue chip NFTs
 
 #### Defined in
 
-[contracts.ts:7](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L7)
+[nft-manager/contracts.ts:7](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L7)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:12](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L12)
+[nft-manager/contracts.ts:12](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L12)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:5](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L5)
+[nft-manager/contracts.ts:5](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L5)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:15](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L15)
+[nft-manager/contracts.ts:15](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L15)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:8](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L8)
+[nft-manager/contracts.ts:8](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L8)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:11](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L11)
+[nft-manager/contracts.ts:11](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L11)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:22](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L22)
+[nft-manager/contracts.ts:22](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L22)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:14](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L14)
+[nft-manager/contracts.ts:14](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L14)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:10](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L10)
+[nft-manager/contracts.ts:10](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L10)
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:19](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L19)
+[nft-manager/contracts.ts:19](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L19)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:20](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L20)
+[nft-manager/contracts.ts:20](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L20)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:6](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L6)
+[nft-manager/contracts.ts:6](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L6)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:21](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L21)
+[nft-manager/contracts.ts:21](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L21)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:18](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L18)
+[nft-manager/contracts.ts:18](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L18)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:9](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L9)
+[nft-manager/contracts.ts:9](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L9)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:16](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L16)
+[nft-manager/contracts.ts:16](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L16)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:23](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L23)
+[nft-manager/contracts.ts:23](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L23)
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 #### Defined in
 
-[contracts.ts:13](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L13)
+[nft-manager/contracts.ts:13](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L13)
 
 ___
 
@@ -216,4 +216,4 @@ ___
 
 #### Defined in
 
-[contracts.ts:17](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/contracts.ts#L17)
+[nft-manager/contracts.ts:17](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L17)

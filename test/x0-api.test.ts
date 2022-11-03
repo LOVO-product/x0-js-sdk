@@ -40,10 +40,27 @@ describe(`X0Api`, () => {
       const res = await x0Api.isPair(x0Address, coldAddress);
       expect(res).toBeTruthy();
     });
+
+    it('should return false', async () => {
+      const res = await x0Api.isPair(x0Address, '0xDB762136866B65043c8fBbECFF745C8c24b6D14A');
+      expect(res).toBeFalsy();
+    });
   });
 
-  it('should return false', async () => {
-    const res = await x0Api.isPair(x0Address, '0xDB762136866B65043c8fBbECFF745C8c24b6D14A');
-    expect(res).toBeFalsy();
-  });
+  describe("getPairedColdAddressesFrom", () => {
+    it('should return cold addresses', async () => {
+      const res = await x0Api.getPairedColdAddressesFrom(x0Address);
+      expect(res).toBeDefined();
+      expect(res).toContain(coldAddress);
+    });
+
+    it('should validate address', async () => {
+        try {
+            await x0Api.getPairedColdAddressesFrom('0x123');
+            expect(true).toBeFalsy();
+        } catch (e: any) {
+            expect(e.message).toEqual('Invalid Block Chain Address: 0x123');
+        }
+    })
+  })
 });

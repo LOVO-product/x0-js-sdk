@@ -35,7 +35,6 @@ export class Erc721 implements NftManager {
 
   async fetchTokens(address: string): Promise<string[]> {
     const balance = await this.fetchBalance(address);
-
     const tokens = await Promise.all(
       new Array(balance).fill(0).map(async (_, i) => {
         const tokenIdInBigNumber = await this.contract.tokenOfOwnerByIndex(address, i);

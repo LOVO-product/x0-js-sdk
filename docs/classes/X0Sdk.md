@@ -20,254 +20,81 @@ const metaData = await x0Sdk.getNftMetadata('0x...', tokens[0]);
 
 ### Properties
 
-- [apiKey](X0Sdk.md#apikey)
-- [nftManagers](X0Sdk.md#nftmanagers)
-- [provider](X0Sdk.md#provider)
-- [abi](X0Sdk.md#abi)
-- [exceptionNfts](X0Sdk.md#exceptionnfts)
+- [x0Api](X0Sdk.md#x0api)
+- [x0Web3](X0Sdk.md#x0web3)
 
 ### Methods
 
-- [fetchTokens](X0Sdk.md#fetchtokens)
-- [fetchTokensWithContractAddress](X0Sdk.md#fetchtokenswithcontractaddress)
-- [getNftManager](X0Sdk.md#getnftmanager)
-- [getNftMetadata](X0Sdk.md#getnftmetadata)
-- [isOwnerOf](X0Sdk.md#isownerof)
-- [initialize](X0Sdk.md#initialize)
+- [getMetadataFrom](X0Sdk.md#getmetadatafrom)
 
 ## Constructors
 
 ### constructor
 
-• `Private` **new X0Sdk**(`config`)
+• **new X0Sdk**(`x0Web3`, `x0Api`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `config` | `X0SdkConfig` |
+| `x0Web3` | [`X0Web3`](X0Web3.md) |
+| `x0Api` | [`X0Api`](X0Api.md) |
 
 #### Defined in
 
-[x0-sdk.ts:60](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L60)
+[nft-manager/x0-sdk.ts:26](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L26)
 
 ## Properties
 
-### apiKey
+### x0Api
 
-• `Optional` `Readonly` **apiKey**: `string`
-
-**`Description`**
-
-Beanz, InvisibleFriends, MoonBirds is required to use Erc721Alternative
-
-#### Defined in
-
-[x0-sdk.ts:32](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L32)
-
-___
-
-### nftManagers
-
-• `Private` `Readonly` **nftManagers**: `Object` = `{}`
+• `Private` **x0Api**: [`X0Api`](X0Api.md)
 
 **`Description`**
 
-NftManager is a interface for fetching NFTs
-
-#### Index signature
-
-▪ [key: `string`]: [`NftManager`](../interfaces/NftManager.md)
+Fetch to X0 API and returns the connections cold wallet address
 
 #### Defined in
 
-[x0-sdk.ts:39](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L39)
+[nft-manager/x0-sdk.ts:25](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L25)
 
 ___
 
-### provider
+### x0Web3
 
-• `Readonly` **provider**: `Provider`
-
-#### Defined in
-
-[x0-sdk.ts:34](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L34)
-
-___
-
-### abi
-
-▪ `Static` **abi**: `string`[]
-
-#### Defined in
-
-[x0-sdk.ts:41](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L41)
-
-___
-
-### exceptionNfts
-
-▪ `Static` **exceptionNfts**: `string`[]
+• `Private` **x0Web3**: [`X0Web3`](X0Web3.md)
 
 **`Description`**
 
-Beanz, InvisibleFriends, MoonBirds does not support Erc721
+Fetches to the blockchain and returns the owner of the token and the token's metadata
 
 #### Defined in
 
-[x0-sdk.ts:50](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L50)
+[nft-manager/x0-sdk.ts:19](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L19)
 
 ## Methods
 
-### fetchTokens
+### getMetadataFrom
 
-▸ **fetchTokens**(`contract`, `address`): `Promise`<`string`[]\>
+▸ **getMetadataFrom**(`contractAddress`, `x0WalletAddress`): `Promise`<`any`\>
 
-#### Parameters
+**`Description`**
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contract` | [`BlueChipContract`](../enums/BlueChipContract.md) | contract name of BlueChipContract |
-| `address` | `string` | wallet address |
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-tokens
-
-#### Defined in
-
-[x0-sdk.ts:91](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L91)
-
-___
-
-### fetchTokensWithContractAddress
-
-▸ **fetchTokensWithContractAddress**(`contractAddress`, `address`): `Promise`<`string`[]\>
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contractAddress` | `string` | contract address |
-| `address` | `string` | wallet address |
-
-#### Returns
-
-`Promise`<`string`[]\>
-
-tokens
-
-#### Defined in
-
-[x0-sdk.ts:101](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L101)
-
-___
-
-### getNftManager
-
-▸ `Private` **getNftManager**(`contractAddress`): [`NftManager`](../interfaces/NftManager.md)
+Find All NFTs metadata for a given x0 address
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `contractAddress` | `string` |
+| `x0WalletAddress` | `string` |
 
 #### Returns
 
-[`NftManager`](../interfaces/NftManager.md)
+`Promise`<`any`\>
+
+the owner of token's metadata
 
 #### Defined in
 
-[x0-sdk.ts:65](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L65)
-
-___
-
-### getNftMetadata
-
-▸ **getNftMetadata**(`contractAddress`, `tokenId`): `Promise`<``null`` \| `Record`<`string`, `any`\>\>
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contractAddress` | `string` | contract address |
-| `tokenId` | `string` | tokenId |
-
-#### Returns
-
-`Promise`<``null`` \| `Record`<`string`, `any`\>\>
-
-metadata
-
-#### Defined in
-
-[x0-sdk.ts:115](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L115)
-
-___
-
-### isOwnerOf
-
-▸ **isOwnerOf**(`contract`, `address`): `Promise`<`boolean`\>
-
-**`Description`**
-
-check if the wallet address has a token of the contract
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contract` | [`BlueChipContract`](../enums/BlueChipContract.md) | contract name of BlueChipContract |
-| `address` | `string` | wallet address |
-
-#### Returns
-
-`Promise`<`boolean`\>
-
-true if the wallet address has NFTs
-
-#### Defined in
-
-[x0-sdk.ts:130](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L130)
-
-▸ **isOwnerOf**(`contract`, `address`): `Promise`<`boolean`\>
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `contract` | `string` | contract address |
-| `address` | `string` | wallet address |
-
-#### Returns
-
-`Promise`<`boolean`\>
-
-true if the wallet address has NFTs
-
-#### Defined in
-
-[x0-sdk.ts:137](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L137)
-
-___
-
-### initialize
-
-▸ `Static` **initialize**(`config`): [`X0Sdk`](X0Sdk.md)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | `X0SdkConfig` |
-
-#### Returns
-
-[`X0Sdk`](X0Sdk.md)
-
-#### Defined in
-
-[x0-sdk.ts:56](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-sdk.ts#L56)
+[nft-manager/x0-sdk.ts:37](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L37)

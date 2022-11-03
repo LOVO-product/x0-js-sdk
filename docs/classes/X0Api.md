@@ -23,7 +23,6 @@ const x0Api = new X0Api('YOUR_API_KEY');
 
 ### Methods
 
-- [\_validateAddress](X0Api.md#_validateaddress)
 - [getPairedColdAddressesFrom](X0Api.md#getpairedcoldaddressesfrom)
 - [getX0ConnectionsBy](X0Api.md#getx0connectionsby)
 - [isPair](X0Api.md#ispair)
@@ -43,7 +42,7 @@ const x0Api = new X0Api('YOUR_API_KEY');
 
 #### Defined in
 
-[x0-api.ts:39](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L39)
+[api/x0-api.ts:39](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L39)
 
 ## Properties
 
@@ -55,7 +54,7 @@ The API key used to authenticate with the API.
 
 #### Defined in
 
-[x0-api.ts:37](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L37)
+[api/x0-api.ts:37](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L37)
 
 ___
 
@@ -65,7 +64,7 @@ ___
 
 #### Defined in
 
-[x0-api.ts:27](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L27)
+[api/x0-api.ts:27](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L27)
 
 ___
 
@@ -77,29 +76,9 @@ X0 API base URL
 
 #### Defined in
 
-[x0-api.ts:32](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L32)
+[api/x0-api.ts:32](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L32)
 
 ## Methods
-
-### \_validateAddress
-
-▸ `Private` **_validateAddress**(`address`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `address` | `string` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[x0-api.ts:71](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L71)
-
-___
 
 ### getPairedColdAddressesFrom
 
@@ -119,7 +98,7 @@ Cold addresses connected to the X0 wallet
 
 #### Defined in
 
-[x0-api.ts:65](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L65)
+[api/x0-api.ts:65](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L65)
 
 ___
 
@@ -141,7 +120,7 @@ X0 connections through the address
 
 #### Defined in
 
-[x0-api.ts:54](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L54)
+[api/x0-api.ts:54](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L54)
 
 ___
 
@@ -164,4 +143,4 @@ true if the x0 and cold addresses are a pair
 
 #### Defined in
 
-[x0-api.ts:83](https://github.com/LOVO-product/x0-js-sdk/blob/886483a/src/x0-api.ts#L83)
+[api/x0-api.ts:81](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/api/x0-api.ts#L81)
