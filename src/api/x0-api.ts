@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { ethers } from 'ethers';
+import {X0Web3} from "../nft-manager/x0-web3";
 
 export interface X0ApiConfig {
   /**
@@ -52,7 +52,7 @@ export class X0Api {
    * @returns X0 connections through the address
    */
   async getX0ConnectionsBy(address: string): Promise<Connection[]> {
-    this._validateAddress(address);
+    X0Web3.validateAddress(address);
     const response = await this.axiosInstance.get<Connection[]>(`wallets/${address}/connections`);
     return response.data;
   }
@@ -63,14 +63,12 @@ export class X0Api {
    * @returns Cold addresses connected to the X0 wallet
    */
   async getPairedColdAddressesFrom(x0Address: string): Promise<string[]> {
-    this._validateAddress(x0Address);
+    X0Web3.validateAddress(x0Address);
+    try{
     const connections = await this.getX0ConnectionsBy(x0Address);
-    return connections.map((connection: Connection) => connection.walletAddressCold);
-  }
-
-  private _validateAddress(address: string): void {
-    if (!ethers.utils.isAddress(address)) {
-      throw new Error(`Invalid Block Chain Address: ${address}`);
+      return connections.map((connection: Connection) => connection.walletAddressCold);
+    }catch(e){
+      return [];
     }
   }
 
@@ -81,12 +79,9 @@ export class X0Api {
    * @returns true if the x0 and cold addresses are a pair
    */
   async isPair(x0Address: string, coldAddress: string): Promise<boolean> {
-    this._validateAddress(x0Address);
-    this._validateAddress(coldAddress);
+    X0Web3.validateAddress(x0Address);
+    X0Web3.validateAddress(coldAddress);
     const connections = await this.getX0ConnectionsBy(x0Address);
-    if (!connections) {
-      return false;
-    }
     const result = connections.filter((connection: Connection) => {
       return (
         connection.walletAddressCold === coldAddress || connection.walletAddressX0 === coldAddress
