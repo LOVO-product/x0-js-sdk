@@ -7,12 +7,12 @@ describe(`X0Api`, () => {
   const x0ApiKey = process.env.X0_API_KEY;
   let x0Api: X0Api;
   const x0Address = '0x268Fc17e40123701B9A5a71dB9e77bF5Ae07D5d6';
-  const coldAddress = '0x571aab2bec12edC2cfA02C989b2DA47912B7a0c6';
+  const coldAddress = '0xc0f02369E30ABA6291b4bBb59E453308bf8C049e'; // TODO: change to cold wallet address that has some VVO NFTs
   beforeAll(() => {
     if (!x0ApiKey) {
       throw new Error('Missing X0_API_KEY');
     }
-    x0Api = new X0Api(x0ApiKey, { url: 'https://api-dev.x0.xyz/v1' });
+    x0Api = new X0Api({ url: 'https://api-dev.x0.xyz/v1', apiKey: x0ApiKey });
   });
 
   it('should be defined', () => {
@@ -47,7 +47,7 @@ describe(`X0Api`, () => {
     });
   });
 
-  describe("getPairedColdAddressesFrom", () => {
+  describe('getPairedColdAddressesFrom', () => {
     it('should return cold addresses', async () => {
       const res = await x0Api.getPairedColdAddressesFrom(x0Address);
       expect(res).toBeDefined();
@@ -55,12 +55,12 @@ describe(`X0Api`, () => {
     });
 
     it('should validate address', async () => {
-        try {
-            await x0Api.getPairedColdAddressesFrom('0x123');
-            expect(true).toBeFalsy();
-        } catch (e: any) {
-            expect(e.message).toEqual('Invalid Block Chain Address: 0x123');
-        }
-    })
-  })
+      try {
+        await x0Api.getPairedColdAddressesFrom('0x123');
+        expect(true).toBeFalsy();
+      } catch (e: any) {
+        expect(e.message).toEqual('Invalid Block Chain Address: 0x123');
+      }
+    });
+  });
 });

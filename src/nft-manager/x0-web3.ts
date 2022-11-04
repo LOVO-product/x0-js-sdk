@@ -6,6 +6,7 @@ import {
   BlueChipContract,
   contractAddresses,
 } from '../index';
+import { provider } from 'web3-core';
 
 export interface X0Web3Config {
   /**
@@ -17,7 +18,7 @@ export interface X0Web3Config {
   /**
    * @description Use your own provider
    */
-  provider: providers.Provider;
+  provider: providers.Provider | provider;
 }
 
 /**
@@ -26,9 +27,6 @@ export interface X0Web3Config {
  * const x0Web3 = new X0Web3({
  *     provider: new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey),
  * });
- * const x0Api = new X0Api(x0ApiKey, { url: 'https://api-dev.x0.xyz/v1' });
- * const x0Sdk = new X0Sdk(x0Web3, x0Api);
- * await x0Sdk.getMetadataFrom('contractAddress', 'x0WalletAddress');
  * ```
  */
 export class X0Web3 {
@@ -37,7 +35,7 @@ export class X0Web3 {
    */
   readonly apiKey?: string;
 
-  readonly provider: providers.Provider;
+  readonly provider: providers.Provider | provider;
 
   /**
    * @description NftManager is a interface for fetching NFTs

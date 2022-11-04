@@ -58,4 +58,4 @@ contract addresses for supported blue chip NFTs
 
 #### Defined in
 
-[nft-manager/contracts.ts:29](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/contracts.ts#L29)
+[nft-manager/contracts.ts:29](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/contracts.ts#L29)

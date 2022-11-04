@@ -8,9 +8,6 @@
 const x0Web3 = new X0Web3({
     provider: new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey),
 });
-const x0Api = new X0Api(x0ApiKey, { url: 'https://api-dev.x0.xyz/v1' });
-const x0Sdk = new X0Sdk(x0Web3, x0Api);
-await x0Sdk.getMetadataFrom('contractAddress', 'x0WalletAddress');
 ```
 
 ## Table of contents
@@ -51,7 +48,7 @@ await x0Sdk.getMetadataFrom('contractAddress', 'x0WalletAddress');
 
 #### Defined in
 
-nft-manager/x0-web3.ts:66
+[nft-manager/x0-web3.ts:64](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L64)
 
 ## Properties
 
@@ -65,7 +62,7 @@ Beanz, InvisibleFriends, MoonBirds is required to use Erc721Alternative
 
 #### Defined in
 
-nft-manager/x0-web3.ts:38
+[nft-manager/x0-web3.ts:36](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L36)
 
 ___
 
@@ -83,17 +80,17 @@ NftManager is a interface for fetching NFTs
 
 #### Defined in
 
-nft-manager/x0-web3.ts:45
+[nft-manager/x0-web3.ts:43](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L43)
 
 ___
 
 ### provider
 
-• `Readonly` **provider**: `Provider`
+• `Readonly` **provider**: `Provider` \| `provider`
 
 #### Defined in
 
-nft-manager/x0-web3.ts:40
+[nft-manager/x0-web3.ts:38](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L38)
 
 ___
 
@@ -103,7 +100,7 @@ ___
 
 #### Defined in
 
-nft-manager/x0-web3.ts:47
+[nft-manager/x0-web3.ts:45](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L45)
 
 ___
 
@@ -117,7 +114,7 @@ Beanz, InvisibleFriends, MoonBirds does not support Erc721
 
 #### Defined in
 
-nft-manager/x0-web3.ts:56
+[nft-manager/x0-web3.ts:54](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L54)
 
 ## Methods
 
@@ -140,7 +137,7 @@ tokens
 
 #### Defined in
 
-nft-manager/x0-web3.ts:97
+[nft-manager/x0-web3.ts:95](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L95)
 
 ___
 
@@ -163,7 +160,7 @@ tokens
 
 #### Defined in
 
-nft-manager/x0-web3.ts:107
+[nft-manager/x0-web3.ts:105](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L105)
 
 ___
 
@@ -183,7 +180,7 @@ ___
 
 #### Defined in
 
-nft-manager/x0-web3.ts:71
+[nft-manager/x0-web3.ts:69](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L69)
 
 ___
 
@@ -206,7 +203,7 @@ metadata
 
 #### Defined in
 
-nft-manager/x0-web3.ts:121
+[nft-manager/x0-web3.ts:119](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L119)
 
 ___
 
@@ -233,7 +230,7 @@ true if the wallet address has NFTs
 
 #### Defined in
 
-nft-manager/x0-web3.ts:136
+[nft-manager/x0-web3.ts:134](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L134)
 
 ▸ **isOwnerOf**(`contract`, `address`): `Promise`<`boolean`\>
 
@@ -252,7 +249,7 @@ true if the wallet address has NFTs
 
 #### Defined in
 
-nft-manager/x0-web3.ts:143
+[nft-manager/x0-web3.ts:141](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L141)
 
 ___
 
@@ -272,7 +269,7 @@ ___
 
 #### Defined in
 
-nft-manager/x0-web3.ts:62
+[nft-manager/x0-web3.ts:60](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L60)
 
 ___
 
@@ -292,4 +289,4 @@ ___
 
 #### Defined in
 
-nft-manager/x0-web3.ts:159
+[nft-manager/x0-web3.ts:157](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-web3.ts#L157)

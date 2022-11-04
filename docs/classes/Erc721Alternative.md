@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[nft-manager/erc721-alternative.ts:6](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/erc721-alternative.ts#L6)
+[nft-manager/erc721-alternative.ts:6](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/erc721-alternative.ts#L6)
 
 ## Properties
 
@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[nft-manager/erc721-alternative.ts:5](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/erc721-alternative.ts#L5)
+[nft-manager/erc721-alternative.ts:5](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/erc721-alternative.ts#L5)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[nft-manager/erc721-alternative.ts:6](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/erc721-alternative.ts#L6)
+[nft-manager/erc721-alternative.ts:6](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/erc721-alternative.ts#L6)
 
 ## Methods
 
@@ -84,7 +84,7 @@ tokens
 
 #### Defined in
 
-[nft-manager/erc721-alternative.ts:18](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/erc721-alternative.ts#L18)
+[nft-manager/erc721-alternative.ts:18](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/erc721-alternative.ts#L18)
 
 ___
 
@@ -110,7 +110,7 @@ true if the address owns at least one token
 
 #### Defined in
 
-[nft-manager/erc721-alternative.ts:13](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/erc721-alternative.ts#L13)
+[nft-manager/erc721-alternative.ts:13](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/erc721-alternative.ts#L13)
 
 ___
 
@@ -136,4 +136,4 @@ metadata
 
 #### Defined in
 
-[nft-manager/erc721-alternative.ts:25](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/erc721-alternative.ts#L25)
+[nft-manager/erc721-alternative.ts:25](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/erc721-alternative.ts#L25)

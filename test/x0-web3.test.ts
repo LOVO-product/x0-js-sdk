@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
 import { ethers } from 'ethers';
 import { BlueChipContract, X0Web3 } from '../src';
+// import Web3 from "web3";
 dotenv.config();
 
 describe(`X0Sdk`, () => {

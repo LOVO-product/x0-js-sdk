@@ -5,11 +5,11 @@
 **`Example`**
 
 ```typescript
-const x0Sdk = new X0Sdk({ provider: new ethers.providers.AlchemyProvider('mainnet', 'YOUR_PROVIDER_API_KEY') });
-const x0Api = new X0Api('YOUR_X0_API_KEY');
-const pairedWalletAddresses = await x0Api.getPairedColdAddressesFrom('0x...');
-const tokens = await x0Sdk.fetchTokensWithContractAddress('0x...', pairedWalletAddresses[0]);
-const metaData = await x0Sdk.getNftMetadata('0x...', tokens[0]);
+const provider = new Web3.providers.HttpProvider(
+        'https://eth-mainnet.alchemyapi.io/v2/' + alchemyApiKey,
+      );
+const Web3X0Sdk = new X0Sdk({ provider, x0ApiKey });
+const metadata = await Web3X0Sdk.getMetadataFrom(contractAddress, x0Address);
 ```
 
 ## Table of contents
@@ -25,24 +25,24 @@ const metaData = await x0Sdk.getNftMetadata('0x...', tokens[0]);
 
 ### Methods
 
+- [fetchTokensWithContractAddress](X0Sdk.md#fetchtokenswithcontractaddress)
 - [getMetadataFrom](X0Sdk.md#getmetadatafrom)
 
 ## Constructors
 
 ### constructor
 
-• **new X0Sdk**(`x0Web3`, `x0Api`)
+• **new X0Sdk**(`__namedParameters`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `x0Web3` | [`X0Web3`](X0Web3.md) |
-| `x0Api` | [`X0Api`](X0Api.md) |
+| `__namedParameters` | `X0SdkConfig` |
 
 #### Defined in
 
-[nft-manager/x0-sdk.ts:26](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L26)
+[nft-manager/x0-sdk.ts:44](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-sdk.ts#L44)
 
 ## Properties
 
@@ -56,7 +56,7 @@ Fetch to X0 API and returns the connections cold wallet address
 
 #### Defined in
 
-[nft-manager/x0-sdk.ts:25](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L25)
+[nft-manager/x0-sdk.ts:42](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-sdk.ts#L42)
 
 ___
 
@@ -70,9 +70,34 @@ Fetches to the blockchain and returns the owner of the token and the token's met
 
 #### Defined in
 
-[nft-manager/x0-sdk.ts:19](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L19)
+[nft-manager/x0-sdk.ts:36](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-sdk.ts#L36)
 
 ## Methods
+
+### fetchTokensWithContractAddress
+
+▸ **fetchTokensWithContractAddress**(`contractAddress`, `x0WalletAddress`): `Promise`<`string`[]\>
+
+**`Description`**
+
+Find All NFTs token for a given x0 address
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `contractAddress` | `string` |
+| `x0WalletAddress` | `string` |
+
+#### Returns
+
+`Promise`<`string`[]\>
+
+#### Defined in
+
+[nft-manager/x0-sdk.ts:57](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-sdk.ts#L57)
+
+___
 
 ### getMetadataFrom
 
@@ -97,4 +122,4 @@ the owner of token's metadata
 
 #### Defined in
 
-[nft-manager/x0-sdk.ts:37](https://github.com/LOVO-product/x0-js-sdk/blob/4d7ebd1/src/nft-manager/x0-sdk.ts#L37)
+[nft-manager/x0-sdk.ts:82](https://github.com/LOVO-product/x0-js-sdk/blob/b225294/src/nft-manager/x0-sdk.ts#L82)

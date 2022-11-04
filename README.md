@@ -20,40 +20,47 @@
 
 Install the package with:
 
+```bash
+npm install @lovoai/x0-js-sdk
+```
+
 ### Usage with TypeScript
 
 X0 maintains types for the latest [API version][api-versions].
 
 Instantiate it as `new X0Api()` and `new X0Sdk()` with the latest API version.
 
+**`X0Sdk Example`**
+
+```typescript
+// for Web3.js
+const provider = new Web3.providers.HttpProvider(
+    'https://eth-mainnet.alchemyapi.io/v2/' + alchemyApiKey,
+);
+const Web3X0Sdk = new X0Sdk({ provider, x0ApiKey });
+const metadata = await Web3X0Sdk.getMetadataFrom(contractAddress, x0Address);
+```
+
+```typescript
+// for ethers.js
+const provider = new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey);
+x0Sdk = new X0Sdk({ provider, x0ApiKey });
+const metadata = await x0Sdk.getMetadataFrom(contractAddress, x0Address);
+```
+
 **`X0Api Example`**
 
 ```typescript
 import { X0Api } from '@x0/x0-api';
-const x0Api = new X0Api('YOUR_API_KEY');
+const x0Api = new X0Api({
+    apiKey: 'YOUR_API_KEY',
+});
 ```
 
 **`X0Web3 Example`**
 
 ```typescript
-import {X0Web3} from "./x0-web3";
-
-const x0Web3 = new X0Web3({ // X0Web3 is a wrapper around web3
-    provider: new ethers.providers.AlchemyProvider('mainnet', 'YOUR_PROVIDER_API_KEY'),
-});
-const x0Api = new X0Api('YOUR_X0_API_KEY'); // X0Api calls the X0 API
-const pairedWalletAddresses = await x0Api.getPairedColdAddressesFrom('0x...'); // Parameter is a wallet address, returns an array of paired cold addresses
-const tokens = await x0Web3.fetchTokensWithContractAddress('0x...', pairedWalletAddresses[0]);
-const metaData = await x0Web3.getNftMetadata('0x...', tokens[0]); // Parameters are contract address and token id
-```
-
-**`X0Sdk Example`**
-
-```typescript
 const x0Web3 = new X0Web3({
     provider: new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey),
 });
-const x0Api = new X0Api(x0ApiKey, { url: 'https://api-dev.x0.xyz/v1' });
-const x0Sdk = new X0Sdk(x0Web3, x0Api);
-await x0Sdk.getMetadataFrom('contractAddress', 'x0WalletAddress');
 ```

@@ -1,11 +1,16 @@
 import axios, { AxiosInstance } from 'axios';
-import {X0Web3} from "../nft-manager/x0-web3";
+import { X0Web3 } from '../nft-manager/x0-web3';
 
 export interface X0ApiConfig {
   /**
    * To change the base URL for the API, set this value.
    */
   url?: string;
+
+  /**
+   * The API key used to authenticate with the API.
+   */
+  apiKey: string;
 }
 
 /**
@@ -20,7 +25,9 @@ interface Connection {
  * @example
  * ```typescript
  * import { X0Api } from '@x0/x0-api';
- * const x0Api = new X0Api('YOUR_API_KEY');
+ * const x0Api = new X0Api({
+ *     apiKey: 'YOUR_API_KEY',
+ * });
  * ```
  */
 export class X0Api {
@@ -31,17 +38,11 @@ export class X0Api {
    */
   private baseUrl = 'https://api.x0.xyz/v1';
 
-  /**
-   * The API key used to authenticate with the API.
-   */
-  private apiKey: string;
-
-  constructor(apiKey: string, config?: X0ApiConfig) {
-    this.apiKey = apiKey;
+  constructor(config: X0ApiConfig) {
     this.axiosInstance = axios.create({
       baseURL: config?.url ?? this.baseUrl,
       headers: {
-        'x-api-key': this.apiKey,
+        'x-api-key': config.apiKey,
       },
     });
   }
@@ -64,10 +65,10 @@ export class X0Api {
    */
   async getPairedColdAddressesFrom(x0Address: string): Promise<string[]> {
     X0Web3.validateAddress(x0Address);
-    try{
-    const connections = await this.getX0ConnectionsBy(x0Address);
+    try {
+      const connections = await this.getX0ConnectionsBy(x0Address);
       return connections.map((connection: Connection) => connection.walletAddressCold);
-    }catch(e){
+    } catch (e) {
       return [];
     }
   }
