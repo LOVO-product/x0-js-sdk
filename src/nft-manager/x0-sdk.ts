@@ -1,14 +1,43 @@
 import { X0Web3 } from './x0-web3';
 import { X0Api } from '../api/x0-api';
+import { providers } from 'ethers';
+import { provider } from 'web3-core';
+
+interface X0SdkConfig {
+  /**
+   * @description The Ethereum provider to use for the SDK.
+   */
+  provider: providers.Provider | provider;
+
+  /**
+   * @description X0 API Key
+   */
+  x0ApiKey: string;
+
+  /**
+   * @description X0 API URL
+   * @default 'https://api.x0.xyz/v1'
+   */
+  x0ApiUrl?: string;
+}
 
 /**
  * @example
  * ```typescript
- * const x0Sdk = new X0Sdk({ provider: new ethers.providers.AlchemyProvider('mainnet', 'YOUR_PROVIDER_API_KEY') });
- * const x0Api = new X0Api('YOUR_X0_API_KEY');
- * const pairedWalletAddresses = await x0Api.getPairedColdAddressesFrom('0x...');
- * const tokens = await x0Sdk.fetchTokensWithContractAddress('0x...', pairedWalletAddresses[0]);
- * const metaData = await x0Sdk.getNftMetadata('0x...', tokens[0]);
+ * const provider = new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey);
+ * x0Sdk = new X0Sdk({ provider, x0ApiKey });
+ * const metadata = await x0Sdk.getMetadataFrom(contractAddress, x0Address);
+ * ```
+ */
+
+/**
+ * @example
+ * ```typescript
+ * const provider = new Web3.providers.HttpProvider(
+ *         'https://eth-mainnet.alchemyapi.io/v2/' + alchemyApiKey,
+ *       );
+ * const Web3X0Sdk = new X0Sdk({ provider, x0ApiKey });
+ * const metadata = await Web3X0Sdk.getMetadataFrom(contractAddress, x0Address);
  * ```
  */
 export class X0Sdk {
@@ -23,18 +52,21 @@ export class X0Sdk {
    * @private
    */
   private x0Api: X0Api;
-  constructor(x0Web3: X0Web3, x0Api: X0Api) {
-    this.x0Web3 = x0Web3;
-    this.x0Api = x0Api;
+
+  constructor({ provider, x0ApiKey, x0ApiUrl }: X0SdkConfig) {
+    this.x0Web3 = new X0Web3({ provider });
+    this.x0Api = new X0Api({
+      apiKey: x0ApiKey,
+      url: x0ApiUrl,
+    });
   }
 
   /**
-   * @description Find All NFTs metadata for a given x0 address
-   * @returns the owner of token's metadata
+   * @description Find All NFTs token for a given x0 address
    * @param contractAddress
    * @param x0WalletAddress
    */
-  public async getMetadataFrom(contractAddress: string, x0WalletAddress: string): Promise<any> {
+  async fetchTokensWithContractAddress(contractAddress: string, x0WalletAddress: string) {
     X0Web3.validateAddress(contractAddress);
     X0Web3.validateAddress(x0WalletAddress);
     const pairedWalletAddresses = await this.x0Api.getPairedColdAddressesFrom(x0WalletAddress);
@@ -51,8 +83,20 @@ export class X0Sdk {
         tokens.push(...data);
       }),
     );
+    return tokens;
+  }
+  /**
+   * @description Find All NFTs metadata for a given x0 address
+   * @returns the owner of token's metadata
+   * @param contractAddress
+   * @param x0WalletAddress
+   */
+  public async getMetadataFrom(contractAddress: string, x0WalletAddress: string): Promise<any> {
+    X0Web3.validateAddress(contractAddress);
+    X0Web3.validateAddress(x0WalletAddress);
+    const tokens = await this.fetchTokensWithContractAddress(contractAddress, x0WalletAddress);
     if (tokens.length === 0) {
-      throw new Error(`No tokens found for contract address: ${contractAddress}`);
+      return [];
     }
     return await Promise.all(
       tokens.map(async (token) => {
