@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com
+          always-auth: true
       - run: yarn install --immutable --immutable-cache --check-cache
       - name: build
         run: yarn build
