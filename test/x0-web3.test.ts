@@ -57,6 +57,36 @@ describe(`X0Sdk`, () => {
         expect(artchitechsMoonBirdsTokens.length).toBe(3);
       });
 
+      it(`should return true for an owner with address string`, async () => {
+        const artchitechAddress = '0x7BeF8662356116cb436429F47e53322B711F4E42';
+
+        const isArchitectOwnerOfMoonBirds = await sdkInstance.isOwnerOf(
+          '0x23581767a106ae21c074b2276D25e5C3e136a68b',
+          artchitechAddress,
+        );
+
+        expect(isArchitectOwnerOfMoonBirds).toBe(true);
+
+        const artchitechsMoonBirdsTokens = await sdkInstance.fetchTokensWithContractAddress(
+          '0x23581767a106ae21c074b2276D25e5C3e136a68b',
+          artchitechAddress,
+        );
+        expect(artchitechsMoonBirdsTokens.length).toBe(3);
+      });
+
+      it(`should return invalid contract address`, async () => {
+        const artchitechAddress = '0x7BeF8662356116cb436429F47e53322B711F4E42';
+
+        try {
+          await sdkInstance.isOwnerOf(
+            '0x23581767a106ae21c074b2276D25e5C3e136a68z',
+            artchitechAddress,
+          );
+        } catch (e) {
+          expect(e).toEqual(new Error('invalid contract address'));
+        }
+      });
+
       it(`should return false for others`, async () => {
         const isHaraOwnerOfMoonBirds = await sdkInstance.isOwnerOf(
           BlueChipContract.MoonBirds,
@@ -68,6 +98,22 @@ describe(`X0Sdk`, () => {
           harasAddress,
         );
         expect(harasMoonBirdsTokens.length).toBe(0);
+      });
+
+      it('should return Beanz, InvisibleFriends, MoonBirds need apiKey because they do not support Erc721', async () => {
+        const sdk = X0Web3.initialize({
+          provider: new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey),
+        });
+        try {
+          await sdk.isOwnerOf(BlueChipContract.Beanz, harasAddress);
+          expect(true).toBe(false);
+        } catch (e) {
+          expect(e).toEqual(
+            new Error(
+              'Beanz, InvisibleFriends, MoonBirds need apiKey because they do not support Erc721',
+            ),
+          );
+        }
       });
     });
   });
