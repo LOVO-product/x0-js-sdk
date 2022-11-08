@@ -1,4 +1,4 @@
-[@lovoai/x0-js-sdk](README.md) / Exports
+[![codecov](https://codecov.io/gh/LOVO-product/x0-js-sdk/branch/main/graph/badge.svg?token=9XJydxj6lG)](https://codecov.io/gh/LOVO-product/x0-js-sdk)
 
 # @lovoai/x0-js-sdk
 
