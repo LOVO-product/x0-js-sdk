@@ -4,9 +4,7 @@ codecov:
 coverage:
   status:
     project:
-      default: false  # disable the default status that measures entire project
-      tests:
-        paths:
-          - "tests/"
+      default:
         target: 90%
-    patch: false  # disable the patch status
+        threshold: 1%
+    patch: false # disable the patch status
