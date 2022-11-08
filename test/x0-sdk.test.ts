@@ -42,14 +42,11 @@ describe(`X0Sdk`, () => {
     });
 
     it('No paired wallet addresses found for x0 address', async () => {
-      try {
-        await x0Sdk.getMetadataFrom(contractAddress, '0x26bc28C861d5dd3085c3CCe1e113aa4ec9d1a28B');
-        expect(true).toBeFalsy();
-      } catch (e: any) {
-        expect(e.message).toEqual(
-          'No paired wallet addresses found for x0 address: 0x26bc28C861d5dd3085c3CCe1e113aa4ec9d1a28B',
-        );
-      }
+      const res = await x0Sdk.getMetadataFrom(
+        contractAddress,
+        '0x26bc28C861d5dd3085c3CCe1e113aa4ec9d1a28B',
+      );
+      expect(res.length).toBe(0);
     });
 
     it('paired wallet addresses found for x0 address', async () => {

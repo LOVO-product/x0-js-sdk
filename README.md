@@ -1,6 +1,6 @@
-[@lovo-product/x0-js-sdk](README.md) / Exports
+[@lovoai/x0-js-sdk](README.md) / Exports
 
-# @lovo-product/x0-js-sdk
+# @lovoai/x0-js-sdk
 
 ## Table of contents
 
