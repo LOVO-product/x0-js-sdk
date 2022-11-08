@@ -70,15 +70,12 @@ export class X0Sdk {
     X0Web3.validateAddress(contractAddress);
     X0Web3.validateAddress(x0WalletAddress);
     const pairedWalletAddresses = await this.x0Api.getPairedColdAddressesFrom(x0WalletAddress);
-    if (pairedWalletAddresses.length === 0) {
-      throw new Error(`No paired wallet addresses found for x0 address: ${x0WalletAddress}`);
-    }
     const tokens: string[] = [];
     await Promise.all(
-      pairedWalletAddresses.map(async (coldWalletAddress) => {
+      [x0WalletAddress, ...pairedWalletAddresses].map(async (walletAddress) => {
         const data = await this.x0Web3.fetchTokensWithContractAddress(
           contractAddress,
-          coldWalletAddress,
+          walletAddress,
         );
         tokens.push(...data);
       }),
